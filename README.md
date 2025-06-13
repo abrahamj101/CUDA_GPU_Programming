@@ -95,11 +95,17 @@ This demonstrates the point at which parallel overhead is outweighed by GPU thro
 
 ---
 
-## ✅ Summary
+## 📝 Summary
 
-The additions in Parts 4 and 5 ensure:
-- Reliable CUDA diagnostics
-- Accurate timing and benchmarking
-- Functional clarity in code structure
-- A clear point of performance crossover between CPU and GPU
+This assignment optimized a CUDA-based N-body simulation to efficiently compute the minimum distance between points. Key improvements include:
+
+- A custom `atomicMinFloat()` using `atomicCAS` to safely compute atomic minimums on floats.
+- Shared memory tiling, per-thread local minima, and block-level reductions to reduce global memory traffic and atomic contention.
+- Dynamic kernel launch configuration based on device properties.
+- Robust error checking with `check_error()` wrappers around all CUDA API calls.
+- Event-based timing for memory transfers and kernel execution.
+- CPU reference function retained for correctness and performance comparison.
+
+**Result:** GPU performance surpassed CPU starting at `n = 1024`, confirming the effectiveness of the parallel optimizations.
+
 
