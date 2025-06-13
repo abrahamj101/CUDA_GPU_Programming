@@ -51,12 +51,6 @@ This project enhances an N-body CUDA program to efficiently compute the minimum 
       dVx, dVy, dmin_dist, num_points
   );
 
-# CUDA Minimum Distance – Performance, Error Handling & Analysis
-
-This document summarizes the final components of the CUDA optimization project for CSCE 435 – Homework 6, focusing on runtime diagnostics, performance comparison, and functional organization.
-
----
-
 ## 🔍 4. Robust Error Checking & Timing
 
 To ensure correctness and measure efficiency, several runtime diagnostics were added:
